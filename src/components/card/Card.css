@@ -1,0 +1,7 @@
+.card {
+  width: 30%;
+  height: 150px;
+  padding: 20px;
+  background-color: white;
+  border: 0.2px solid #bebebe;
+}

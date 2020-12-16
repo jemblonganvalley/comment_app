@@ -3,6 +3,7 @@ import "./App.css";
 import Card from "./components/card/Card";
 
 function App() {
+  const [show, setShow] = useState(false);
   const [comment, setComment] = useState([
     {
       id: 1,
@@ -35,7 +36,20 @@ function App() {
     <div className="App">
       <h1>Hello Comment App</h1>
 
-      <div className="form_group">
+      <div
+        className="form_group"
+        style={{
+          animationName: show ? "slide_right" : "slide_left",
+        }}
+      >
+        <span
+          className="add_button"
+          onClick={() => {
+            setShow(!show);
+          }}
+        >
+          add
+        </span>
         <input
           type="text"
           placeholder="masukan username"
@@ -67,9 +81,11 @@ function App() {
         </button>
       </div>
 
-      {comment.map((e) => {
-        return <Card username={e.username} body={e.body} />;
-      })}
+      <div className="container_card">
+        {comment.map((e) => {
+          return <Card username={e.username} body={e.body} />;
+        })}
+      </div>
     </div>
   );
 }

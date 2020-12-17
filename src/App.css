@@ -28,11 +28,68 @@
   color: #61dafb;
 }
 
+.container-card {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.form_group {
+  width: 300px;
+  background-color: brown;
+  color: white;
+  height: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  top: 300px;
+  padding: 20px 50px;
+  position: absolute;
+  animation-name: slide_right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+}
+.add_button {
+  position: absolute;
+  left: 300px;
+  bottom: 0px;
+  color: black;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: teal;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes slide_right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-300px);
+  }
+}
+
+@keyframes slide_left {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0);
   }
 }
